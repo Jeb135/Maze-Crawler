@@ -2,7 +2,6 @@
 //  GameViewController.m
 //  MazeCrawler1
 //
-//  Created by Benjamin Bachman on 10/12/14.
 //  Copyright (c) 2014 Leaf Applications. All rights reserved.
 //
 
@@ -11,7 +10,7 @@
 #import "Dungeon_1.h"
 
 @implementation SKScene (Unarchive)
-
+/*
 + (instancetype)unarchiveFromFile:(NSString *)file {
     // Retrieve scene file path from the application bundle
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
@@ -26,7 +25,7 @@
     
     return scene;
 }
-
+*/
 @end
 
 @implementation GameViewController
@@ -44,16 +43,24 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+	//skView.showsPhysics = YES;
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
     Dungeon_1 *scene = [Dungeon_1 sceneWithSize:CGSizeMake(480,320)];
-    [scene initScene:1 withPlayerGridPosition:CGPointMake(2, 1)];
+    [scene initScene:1 withPlayerGridPositionX:2 andY:1];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+	
+	// Play some dungeon music
+	if (![scene actionForKey:@"Music"])
+	{
+		SKAction *loopMusic = [SKAction playSoundFileNamed:@"Dungeon_3.mp3" waitForCompletion:YES];
+		[scene runAction:[SKAction repeatActionForever:loopMusic] withKey:@"Music"];
+	}
 }
 
 - (BOOL)shouldAutorotate

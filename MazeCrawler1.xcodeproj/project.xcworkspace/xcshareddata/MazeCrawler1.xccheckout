@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>71D804ED-17BD-44AC-B4C4-CB5E7E6F6E89</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MazeCrawler1</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F55586FD17BD5F41CBBE18014827CD0B006B2181</key>
+		<string>https://github.com/Jeb135/Maze-Crawler</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MazeCrawler1.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F55586FD17BD5F41CBBE18014827CD0B006B2181</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Jeb135/Maze-Crawler</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F55586FD17BD5F41CBBE18014827CD0B006B2181</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F55586FD17BD5F41CBBE18014827CD0B006B2181</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MazeCrawlerReal</string>
+		</dict>
+	</array>
+</dict>
+</plist>

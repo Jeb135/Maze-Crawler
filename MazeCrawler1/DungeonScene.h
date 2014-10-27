@@ -24,6 +24,10 @@
 #define kPlayerSpeed 4.0
 #define kPlayerRadius 16
 
+// These constants are to make it easier to read the type of collision block
+#define kDeathBlock 9
+#define kObstacleBlock 1
+
 // Simple struct to hold integer versions of the player's grid position
 struct PlayerPosition
 {

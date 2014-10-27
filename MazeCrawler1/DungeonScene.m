@@ -274,15 +274,21 @@
     [newScene initScene:self.currentScene withPlayerGridPositionX:_playerPosition.x andY:_playerPosition.y];
     
     // Create a transition object with the proper slide direction
+	// Changed the actual transition in order to give better sense of world exploration
     SKTransition *newSceneTransition;
     if (direction == kSceneSlideDirectionUp) {
-        newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionUp duration:kSceneSlideDuration];
+        //newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionUp duration:kSceneSlideDuration];
+		newSceneTransition = [SKTransition pushWithDirection:SKTransitionDirectionDown duration:kSceneSlideDuration];
+		//newSceneTransition = [SKTransition fadeWithDuration:kSceneSlideDuration];
     } else if (direction == kSceneSlideDirectionRight) {
-        newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionRight duration:kSceneSlideDuration];
+        //newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionRight duration:kSceneSlideDuration];
+		newSceneTransition = [SKTransition pushWithDirection:SKTransitionDirectionLeft duration:kSceneSlideDuration];
     } else if (direction == kSceneSlideDirectionDown) {
-        newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionDown duration:kSceneSlideDuration];
+        //newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionDown duration:kSceneSlideDuration];
+		newSceneTransition = [SKTransition pushWithDirection:SKTransitionDirectionUp duration:kSceneSlideDuration];
     } else if (direction == kSceneSlideDirectionLeft) {
-        newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:kSceneSlideDuration];
+        //newSceneTransition = [SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:kSceneSlideDuration];
+		newSceneTransition = [SKTransition pushWithDirection:SKTransitionDirectionRight duration:kSceneSlideDuration];
     }
 	
 	// Present the new scene
@@ -290,8 +296,9 @@
     [self.view presentScene:newScene transition:newSceneTransition];
 }
 
-- (void)createPlayerAtPosition:(CGPoint)position {
-    
+- (void)createPlayerAtPosition:(CGPoint)position
+{
+    // Create the ball object and place it in the scene
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:@"Player_Ball_1"];
     ball.name = @"Player";
     ball.position = position;

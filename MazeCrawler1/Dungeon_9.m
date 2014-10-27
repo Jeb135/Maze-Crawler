@@ -61,6 +61,39 @@
 	walls.physicsBody = [SKPhysicsBody bodyWithBodies:wallBlocks];
 	walls.physicsBody.dynamic = NO;
 	[self addChild:walls];
+    
+    // Create an array to hold the emitter map
+    int particleMap[10][15] = { {0,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+    
+    // Lava Emitters
+    NSString *emitterPath = [[NSBundle mainBundle] pathForResource:@"LavaBubbles" ofType:@"sks"];
+    
+    for (int xGrid = 0; xGrid < (kMapHorizontalSize / kGridSquareSize); xGrid++)
+    {
+        for (int yGrid = 0; yGrid < (kMapVerticalSize / kGridSquareSize); yGrid++)
+        {
+            // If there should be a collision block... add one
+            if (particleMap[yGrid][xGrid] == 1)
+            {
+                CGPoint blockPosition = CGPointMake((xGrid+1) * kGridSquareSize - kGridSquareSize / 2,
+                                                    ((kMapVerticalSize / kGridSquareSize) - yGrid) * kGridSquareSize - kGridSquareSize / 2);
+                SKEmitterNode *spark = [NSKeyedUnarchiver unarchiveObjectWithFile:emitterPath];
+                spark.name = @"Lava";
+                spark.zPosition = 12.0;
+                spark.position = blockPosition;
+                [self addChild:spark];
+            }
+        }
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

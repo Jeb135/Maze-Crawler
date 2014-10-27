@@ -30,7 +30,7 @@
 	
 	// Create an array to hold the collision map...
 	int collisionMap[10][15] = {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-								{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+								{1,9,9,9,9,9,9,9,9,9,9,9,9,9,0},
 								{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 								{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 								{1,0,0,1,0,0,0,0,0,0,0,1,0,0,0},
@@ -42,21 +42,32 @@
 	
 	// Create an array of collision blocks based on collision map array
 	NSMutableArray *wallBlocks = [[NSMutableArray alloc] init];
+    NSMutableArray *deathBlocks = [[NSMutableArray alloc] init];
 	
 	for (int xGrid = 0; xGrid < (kMapHorizontalSize / kGridSquareSize); xGrid++)
 	{
 		for (int yGrid = 0; yGrid < (kMapVerticalSize / kGridSquareSize); yGrid++)
 		{
+            // Positon and size
+            CGSize blockSize = CGSizeMake(kGridSquareSize, kGridSquareSize);
+            CGPoint blockPosition = CGPointMake((xGrid+1) * kGridSquareSize - kGridSquareSize / 2,
+                                                ((kMapVerticalSize / kGridSquareSize) - yGrid) * kGridSquareSize - kGridSquareSize / 2);
 			// If there should be a collision block... add one
-			if (collisionMap[yGrid][xGrid] == 1)
+			if (collisionMap[yGrid][xGrid] == kObstacleBlock)
 			{
-				CGSize blockSize = CGSizeMake(kGridSquareSize, kGridSquareSize);
-				CGPoint blockPosition = CGPointMake((xGrid+1) * kGridSquareSize - kGridSquareSize / 2,
-													((kMapVerticalSize / kGridSquareSize) - yGrid) * kGridSquareSize - kGridSquareSize / 2);
 				SKPhysicsBody *newBlock = [SKPhysicsBody bodyWithRectangleOfSize:blockSize
 																		  center:blockPosition];
+                newBlock.dynamic = NO;
 				[wallBlocks addObject:newBlock];
 			}
+            // If the collision block will kill the player imeadiately
+            if (collisionMap[yGrid][xGrid] == kDeathBlock)
+            {
+                SKPhysicsBody *newBlock = [SKPhysicsBody bodyWithRectangleOfSize:blockSize
+                                                                          center:blockPosition];
+                newBlock.dynamic = NO;
+                [deathBlocks addObject:newBlock];
+            }
 		}
 	}
 	
@@ -66,35 +77,74 @@
 	walls.physicsBody.dynamic = NO;
 	[self addChild:walls];
     
-    // Emitters
-	/*
-    NSString *emitterPath = [[NSBundle mainBundle] pathForResource:@"Square_Flames" ofType:@"sks"];
+    // Create the blocks that will kill the player
+    //SKNode *deathBlocks = [SKNode node];
+    //deathBlocks.physicsBody = [SKPhysicsBody bodyWithBodies:deathBlocks];
+    //deathBlocks.physicsBody.dynamic = NO;
+    //[self addChild:deathBlocks];
     
-    for (int i = 0; i <= 4; i++)
+    // Create an array to hold the emitter map
+    int particleMap[10][15] = { {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                                {2,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                                {0,0,0,0,1,1,1,1,1,1,1,0,0,1,1},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,1,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+                                {0,1,1,1,1,1,1,0,1,1,1,1,1,1,1},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}};
+    
+    // Lava Emitters
+    NSString *lavaBubblesPath = [[NSBundle mainBundle] pathForResource:@"LavaBubbles" ofType:@"sks"];
+    NSString *flameTrapPath = [[NSBundle mainBundle] pathForResource:@"FlameTrap" ofType:@"sks"];
+    
+    for (int xGrid = 0; xGrid < (kMapHorizontalSize / kGridSquareSize); xGrid++)
     {
-        SKEmitterNode *spark = [NSKeyedUnarchiver unarchiveObjectWithFile:emitterPath];
-        spark.name = @"Fire";
-        spark.zPosition = 1.0;
-        int ypos, xpos;
-        if (i < 2)
+        for (int yGrid = 0; yGrid < (kMapVerticalSize / kGridSquareSize); yGrid++)
         {
-            ypos = 32*7 - 16;
-            xpos = 32*(8 + i) - 16;
+            // Position
+            CGSize blockSize = CGSizeMake(kGridSquareSize, kGridSquareSize);
+            CGPoint blockPosition = CGPointMake((xGrid+1) * kGridSquareSize - kGridSquareSize / 2,
+                                                ((kMapVerticalSize / kGridSquareSize) - yGrid) * kGridSquareSize - kGridSquareSize / 2);
+            // If there should be a collision block... add one
+            if (particleMap[yGrid][xGrid] == 1)
+            {
+                SKEmitterNode *lava = [NSKeyedUnarchiver unarchiveObjectWithFile:lavaBubblesPath];
+                lava.name = @"Lava";
+                lava.zPosition = 12.0;
+                lava.position = blockPosition;
+                [self addChild:lava];
+            }
+            
+            if (particleMap[yGrid][xGrid] == 2)
+            {
+                SKEmitterNode *trap = [NSKeyedUnarchiver unarchiveObjectWithFile:flameTrapPath];
+                trap.name = @"FlameTrap";
+                trap.zPosition = 12.0;
+                trap.position = blockPosition;
+                [self addChild:trap];
+            }
         }
-        else
-        {
-            ypos = 32*6 - 16;
-            xpos = 32*(8 + i) - 16;
-        }
-        
-        spark.position = CGPointMake(xpos, ypos);
-        [self addChild:spark];
     }
-     */
 }
 
--(void)update:(CFTimeInterval)currentTime {
+-(void)update:(CFTimeInterval)currentTime
+{
     /* Called before each frame is rendered */
+    
+    // Adjust the lava state
+    /*
+    [self enumerateChildNodesWithName:@"Lava" usingBlock:^(SKNode *node, BOOL *stop) {
+        if (rand() % 100 == 1)
+        {
+            if (![node isPaused])
+            {
+                [node setPaused:![node isPaused]];
+            }
+        }
+    }];
+     */
 }
 
 @end

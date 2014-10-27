@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431CF71A19F4953F00FC26E1 /* Tower of BlockDoom.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 431CF71819F4953F00FC26E1 /* Tower of BlockDoom.atlas */; };
+		432243C219F73A4000EAF900 /* Flames.sks in Resources */ = {isa = PBXBuildFile; fileRef = 432243C119F73A4000EAF900 /* Flames.sks */; };
+		433D047519FA9799000F7C88 /* ToxicSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 433D047419FA9799000F7C88 /* ToxicSmoke.sks */; };
+		433D047719FA98B9000F7C88 /* FlameTrap.sks in Resources */ = {isa = PBXBuildFile; fileRef = 433D047619FA98B9000F7C88 /* FlameTrap.sks */; };
 		4349389519EC5FBD00F3D92C /* DungeonScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4349389419EC5FBD00F3D92C /* DungeonScene.m */; };
 		4349389819EC674600F3D92C /* Dungeon_5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4349389719EC674600F3D92C /* Dungeon_5.m */; };
 		4349389B19EC675500F3D92C /* Dungeon_6.m in Sources */ = {isa = PBXBuildFile; fileRef = 4349389A19EC675500F3D92C /* Dungeon_6.m */; };
@@ -16,16 +20,19 @@
 		434D745919EC1874004A9D14 /* Dungeon_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D745819EC1874004A9D14 /* Dungeon_2.m */; };
 		434D745C19EC187F004A9D14 /* Dungeon_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D745B19EC187F004A9D14 /* Dungeon_3.m */; };
 		434D745F19EC1888004A9D14 /* Dungeon_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D745E19EC1888004A9D14 /* Dungeon_4.m */; };
-		4352F24C19ECC8D600EB708E /* Square_Flames.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4352F24A19ECC8D600EB708E /* Square_Flames.sks */; };
+		435A0C1919F73B9100B99C65 /* LavaBubbles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 435A0C1819F73B9100B99C65 /* LavaBubbles.sks */; };
+		43812DE419F2EDDB006430DE /* Dungeon_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43812DE319F2EDDB006430DE /* Dungeon_3.mp3 */; };
+		43812DE819F2F00E006430DE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 43812DE619F2F00E006430DE /* spark.png */; };
 		43E2063E19EB31BC00DC0F65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2063D19EB31BC00DC0F65 /* main.m */; };
 		43E2064119EB31BC00DC0F65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2064019EB31BC00DC0F65 /* AppDelegate.m */; };
-		43E2064419EB31BC00DC0F65 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2064319EB31BC00DC0F65 /* GameScene.m */; };
 		43E2064919EB31BC00DC0F65 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2064819EB31BC00DC0F65 /* GameViewController.m */; };
 		43E2064C19EB31BC00DC0F65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E2064A19EB31BC00DC0F65 /* Main.storyboard */; };
 		43E2064E19EB31BC00DC0F65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E2064D19EB31BC00DC0F65 /* Images.xcassets */; };
 		43E2065119EB31BC00DC0F65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E2064F19EB31BC00DC0F65 /* LaunchScreen.xib */; };
 		43E2065D19EB31BC00DC0F65 /* MazeCrawler1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2065C19EB31BC00DC0F65 /* MazeCrawler1Tests.m */; };
 		43E2066819EB52E200DC0F65 /* Dungeon_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2066719EB52E200DC0F65 /* Dungeon_1.m */; };
+		43E5108719F1F99600F34BAA /* Dungeon_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43E5108619F1F99600F34BAA /* Dungeon_1.mp3 */; };
+		43E5108C19F2021300F34BAA /* Dungeon_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43E5108B19F2021300F34BAA /* Dungeon_2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		431CF71819F4953F00FC26E1 /* Tower of BlockDoom.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Tower of BlockDoom.atlas"; sourceTree = "<group>"; };
+		432243C119F73A4000EAF900 /* Flames.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flames.sks; sourceTree = "<group>"; };
+		433D047419FA9799000F7C88 /* ToxicSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ToxicSmoke.sks; sourceTree = "<group>"; };
+		433D047619FA98B9000F7C88 /* FlameTrap.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FlameTrap.sks; sourceTree = "<group>"; };
 		4349389319EC5FBD00F3D92C /* DungeonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DungeonScene.h; sourceTree = "<group>"; };
 		4349389419EC5FBD00F3D92C /* DungeonScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DungeonScene.m; sourceTree = "<group>"; };
 		4349389619EC674600F3D92C /* Dungeon_5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dungeon_5.h; sourceTree = "<group>"; };
@@ -57,14 +68,14 @@
 		434D745B19EC187F004A9D14 /* Dungeon_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dungeon_3.m; sourceTree = "<group>"; };
 		434D745D19EC1888004A9D14 /* Dungeon_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dungeon_4.h; sourceTree = "<group>"; };
 		434D745E19EC1888004A9D14 /* Dungeon_4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dungeon_4.m; sourceTree = "<group>"; };
-		4352F24A19ECC8D600EB708E /* Square_Flames.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Square_Flames.sks; sourceTree = "<group>"; };
+		435A0C1819F73B9100B99C65 /* LavaBubbles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LavaBubbles.sks; sourceTree = "<group>"; };
+		43812DE319F2EDDB006430DE /* Dungeon_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dungeon_3.mp3; sourceTree = "<group>"; };
+		43812DE619F2F00E006430DE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		43E2063819EB31BC00DC0F65 /* MazeCrawler1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazeCrawler1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E2063C19EB31BC00DC0F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43E2063D19EB31BC00DC0F65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43E2063F19EB31BC00DC0F65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43E2064019EB31BC00DC0F65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43E2064219EB31BC00DC0F65 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		43E2064319EB31BC00DC0F65 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		43E2064719EB31BC00DC0F65 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		43E2064819EB31BC00DC0F65 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		43E2064B19EB31BC00DC0F65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +86,8 @@
 		43E2065C19EB31BC00DC0F65 /* MazeCrawler1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeCrawler1Tests.m; sourceTree = "<group>"; };
 		43E2066619EB52E200DC0F65 /* Dungeon_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dungeon_1.h; sourceTree = "<group>"; };
 		43E2066719EB52E200DC0F65 /* Dungeon_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dungeon_1.m; sourceTree = "<group>"; };
+		43E5108619F1F99600F34BAA /* Dungeon_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dungeon_1.mp3; sourceTree = "<group>"; };
+		43E5108B19F2021300F34BAA /* Dungeon_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dungeon_2.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431CF71619F4953F00FC26E1 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				431CF71819F4953F00FC26E1 /* Tower of BlockDoom.atlas */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
 		434938A519EC677D00F3D92C /* DungeonScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +139,11 @@
 				434938A019EC676A00F3D92C /* Dungeon_8.m */,
 				434938A219EC677400F3D92C /* Dungeon_9.h */,
 				434938A319EC677400F3D92C /* Dungeon_9.m */,
+				43812DE619F2F00E006430DE /* spark.png */,
+				432243C119F73A4000EAF900 /* Flames.sks */,
+				435A0C1819F73B9100B99C65 /* LavaBubbles.sks */,
+				433D047419FA9799000F7C88 /* ToxicSmoke.sks */,
+				433D047619FA98B9000F7C88 /* FlameTrap.sks */,
 			);
 			name = DungeonScene;
 			sourceTree = "<group>";
@@ -143,18 +169,17 @@
 		43E2063A19EB31BC00DC0F65 /* MazeCrawler1 */ = {
 			isa = PBXGroup;
 			children = (
+				431CF71619F4953F00FC26E1 /* Levels */,
 				43E2063F19EB31BC00DC0F65 /* AppDelegate.h */,
 				43E2064019EB31BC00DC0F65 /* AppDelegate.m */,
-				43E2064219EB31BC00DC0F65 /* GameScene.h */,
-				43E2064319EB31BC00DC0F65 /* GameScene.m */,
 				43E2064719EB31BC00DC0F65 /* GameViewController.h */,
 				43E2064819EB31BC00DC0F65 /* GameViewController.m */,
 				43E2064A19EB31BC00DC0F65 /* Main.storyboard */,
 				43E2064D19EB31BC00DC0F65 /* Images.xcassets */,
 				43E2064F19EB31BC00DC0F65 /* LaunchScreen.xib */,
 				43E2063B19EB31BC00DC0F65 /* Supporting Files */,
+				43E5108A19F1FD6F00F34BAA /* Sounds */,
 				434938A519EC677D00F3D92C /* DungeonScene */,
-				4352F24A19ECC8D600EB708E /* Square_Flames.sks */,
 			);
 			path = MazeCrawler1;
 			sourceTree = "<group>";
@@ -183,6 +208,16 @@
 				43E2065B19EB31BC00DC0F65 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43E5108A19F1FD6F00F34BAA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				43812DE319F2EDDB006430DE /* Dungeon_3.mp3 */,
+				43E5108B19F2021300F34BAA /* Dungeon_2.mp3 */,
+				43E5108619F1F99600F34BAA /* Dungeon_1.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +302,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E2065119EB31BC00DC0F65 /* LaunchScreen.xib in Resources */,
+				433D047519FA9799000F7C88 /* ToxicSmoke.sks in Resources */,
+				43E5108719F1F99600F34BAA /* Dungeon_1.mp3 in Resources */,
+				431CF71A19F4953F00FC26E1 /* Tower of BlockDoom.atlas in Resources */,
 				43E2064E19EB31BC00DC0F65 /* Images.xcassets in Resources */,
+				43E5108C19F2021300F34BAA /* Dungeon_2.mp3 in Resources */,
+				435A0C1919F73B9100B99C65 /* LavaBubbles.sks in Resources */,
+				43812DE819F2F00E006430DE /* spark.png in Resources */,
+				433D047719FA98B9000F7C88 /* FlameTrap.sks in Resources */,
+				432243C219F73A4000EAF900 /* Flames.sks in Resources */,
+				43812DE419F2EDDB006430DE /* Dungeon_3.mp3 in Resources */,
 				43E2064C19EB31BC00DC0F65 /* Main.storyboard in Resources */,
-				4352F24C19ECC8D600EB708E /* Square_Flames.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +338,6 @@
 				4349389819EC674600F3D92C /* Dungeon_5.m in Sources */,
 				4349389519EC5FBD00F3D92C /* DungeonScene.m in Sources */,
 				43E2064119EB31BC00DC0F65 /* AppDelegate.m in Sources */,
-				43E2064419EB31BC00DC0F65 /* GameScene.m in Sources */,
 				4349389E19EC675E00F3D92C /* Dungeon_7.m in Sources */,
 				434938A419EC677400F3D92C /* Dungeon_9.m in Sources */,
 				43E2063E19EB31BC00DC0F65 /* main.m in Sources */,

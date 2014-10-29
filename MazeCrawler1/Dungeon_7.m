@@ -71,6 +71,51 @@
 	walls.physicsBody = [SKPhysicsBody bodyWithBodies:wallBlocks];
 	walls.physicsBody.dynamic = NO;
 	[self addChild:walls];
+    
+    // Create an array to hold the emitter map
+    int particleMap[10][15] = { {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,2,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,2,0,0},
+                                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+    
+    // Lava Emitters
+    NSString *lavaBubblesPath = [[NSBundle mainBundle] pathForResource:@"LavaBubbles" ofType:@"sks"];
+    NSString *flameTrapPath = [[NSBundle mainBundle] pathForResource:@"FlameTrap" ofType:@"sks"];
+    
+    for (int xGrid = 0; xGrid < (kMapHorizontalSize / kGridSquareSize); xGrid++)
+    {
+        for (int yGrid = 0; yGrid < (kMapVerticalSize / kGridSquareSize); yGrid++)
+        {
+            // Position
+            CGSize blockSize = CGSizeMake(kGridSquareSize, kGridSquareSize);
+            CGPoint blockPosition = CGPointMake((xGrid+1) * kGridSquareSize - kGridSquareSize / 2,
+                                                ((kMapVerticalSize / kGridSquareSize) - yGrid) * kGridSquareSize - kGridSquareSize / 2);
+            // If there should be a collision block... add one
+            if (particleMap[yGrid][xGrid] == 1)
+            {
+                SKEmitterNode *lava = [NSKeyedUnarchiver unarchiveObjectWithFile:lavaBubblesPath];
+                lava.name = @"Lava";
+                lava.zPosition = 12.0;
+                lava.position = blockPosition;
+                [self addChild:lava];
+            }
+            
+            if (particleMap[yGrid][xGrid] == 2)
+            {
+                SKEmitterNode *trap = [NSKeyedUnarchiver unarchiveObjectWithFile:flameTrapPath];
+                trap.name = @"FlameTrap";
+                trap.zPosition = 12.0;
+                trap.position = blockPosition;
+                [self addChild:trap];
+            }
+        }
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {

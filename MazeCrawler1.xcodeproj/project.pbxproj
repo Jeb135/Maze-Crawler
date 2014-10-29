@@ -26,6 +26,7 @@
 		43E2065119EB31BC00DC0F65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E2064F19EB31BC00DC0F65 /* LaunchScreen.xib */; };
 		43E2065D19EB31BC00DC0F65 /* MazeCrawler1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2065C19EB31BC00DC0F65 /* MazeCrawler1Tests.m */; };
 		43E2066819EB52E200DC0F65 /* Dungeon_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2066719EB52E200DC0F65 /* Dungeon_1.m */; };
+		9EBEE2E01A01343300054780 /* AI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEE2DF1A01343300054780 /* AI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		43E2065C19EB31BC00DC0F65 /* MazeCrawler1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeCrawler1Tests.m; sourceTree = "<group>"; };
 		43E2066619EB52E200DC0F65 /* Dungeon_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dungeon_1.h; sourceTree = "<group>"; };
 		43E2066719EB52E200DC0F65 /* Dungeon_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dungeon_1.m; sourceTree = "<group>"; };
+		9EBEE2DE1A01340800054780 /* AI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AI.h; sourceTree = "<group>"; };
+		9EBEE2DF1A01343300054780 /* AI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				43E2063B19EB31BC00DC0F65 /* Supporting Files */,
 				434938A519EC677D00F3D92C /* DungeonScene */,
 				4352F24A19ECC8D600EB708E /* Square_Flames.sks */,
+				9EBEE2DE1A01340800054780 /* AI.h */,
+				9EBEE2DF1A01343300054780 /* AI.m */,
 			);
 			path = MazeCrawler1;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E2066819EB52E200DC0F65 /* Dungeon_1.m in Sources */,
+				9EBEE2E01A01343300054780 /* AI.m in Sources */,
 				434D745F19EC1888004A9D14 /* Dungeon_4.m in Sources */,
 				434938A119EC676A00F3D92C /* Dungeon_8.m in Sources */,
 				43E2064919EB31BC00DC0F65 /* GameViewController.m in Sources */,

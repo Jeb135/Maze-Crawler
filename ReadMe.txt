@@ -1,12 +1,2 @@
-This is a useless ReadMe. Don’t ReadMe. Stop that.
+iOS application useless ReadMe. So don’t read me.
 
-
-
-
-I SAID.
-
-
-DON’T.
-
-
-README.
